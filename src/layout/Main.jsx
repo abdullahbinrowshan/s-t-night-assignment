@@ -5,11 +5,11 @@ import Footer from '../components/Footer'
 
 const Main = () => {
     return (
-        <>
+        <div className='bg-yellow-50 bg-opacity-60'>
             <Navbar />
             <Outlet />
             <Footer />
-        </>
+        </div>
     )
 }
 
