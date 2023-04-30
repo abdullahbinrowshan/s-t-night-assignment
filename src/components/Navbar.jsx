@@ -10,7 +10,7 @@ const Navbar = () => {
     }
     return (
         <div>
-            <nav className="border-gray-200  shadow-md shadow-yellow-100  sticky w-full top-0 bg-gray-50">
+            <nav className="border-gray-200 bg-yellow-500  shadow-md shadow-yellow-50  sticky w-full top-0">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <a className="flex items-center">
                         <img src={Logo} className="h-8 mr-3" alt="Logo" />
