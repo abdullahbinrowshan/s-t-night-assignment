@@ -23,7 +23,7 @@ const Footer = () => {
                         </li>
                     </ul>
                 </div>
-                <hr className="my-6 border-gray-200 sm:mx-auto " />
+                <hr className="my-6 border-black sm:mx-auto " />
                 <span className="block text-sm text-gray-800 sm:text-center ">© 2023 <a href="https://flowbite.com/" className="hover:underline">QuizzyBee™</a>. All Rights Reserved.</span>
             </div>
         </footer>

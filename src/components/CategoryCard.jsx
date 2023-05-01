@@ -11,7 +11,7 @@ const CategoryCard = ({ category }) => {
 
     return (
         <div className="max-w-sm mx-auto bg-white border border-gray-300 rounded-lg shadow-md">
-            <img className="rounded-t-lg bg-yellow-100 bg-opacity-50" src={logo} alt="" />
+            <img className="rounded-t-lg bg-yellow-200 bg-opacity-" src={logo} alt="" />
             <div className="p-5 flex justify-between">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{name}</h5>
                 <button onClick={handleNavigate} className="inline-flex items-center px-3 py-2 text-sm font-bold text-center text-black bg-yellow-300 rounded-lg hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-yellow-100">
