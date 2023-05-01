@@ -1,12 +1,36 @@
 import React from 'react';
 import { FaEye } from "@react-icons/all-files/fa/FaEye";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Card = ({ quiz }) => {
     const { options, id, correctAnswer, question } = quiz;
 
     const handleQuizAnswer = (answer) => {
-        console.log(answer);
-        console.log(correctAnswer);
+        if (correctAnswer !== answer) {
+            toast.error("Wrong", {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        } else {
+            toast.success("Awesome that's right", {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
     }
 
     return (
@@ -26,6 +50,18 @@ const Card = ({ quiz }) => {
                     ))
                 }
             </div>
+            <ToastContainer
+                position="top-center"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </div>
     )
 }
