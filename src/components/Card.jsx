@@ -5,11 +5,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Card = ({ quiz }) => {
-    const { options, id, correctAnswer, question } = quiz;
+    const { options, correctAnswer, question } = quiz;
 
     const handleQuizAnswer = (answer) => {
         if (correctAnswer !== answer) {
-            toast.error("Your are Wrong!", {
+            toast.error("😢 Wrong!", {
                 position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -20,7 +20,7 @@ const Card = ({ quiz }) => {
                 theme: "dark",
             });
         } else {
-            toast.success("Awesome that's right!", {
+            toast.success("😀 Awesome you're correct!", {
                 position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
