@@ -4,42 +4,41 @@ import { FaEye } from "@react-icons/all-files/fa/FaEye";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Card = ({ quiz }) => {
+const Card = ({ quiz, setCorrect, correct, wrong, setWrong }) => {
     const { options, correctAnswer, question } = quiz;
 
     const handleQuizAnswer = (answer) => {
         if (correctAnswer !== answer) {
+            setWrong(wrong + 1)
             toast.error("😢 Wrong!", {
-                position: "top-center",
+                position: "bottom-center",
                 autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
-                pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
                 theme: "dark",
             });
         } else {
+            setCorrect(correct + 1);
             toast.success("😀 Awesome you're correct!", {
-                position: "top-center",
+                position: "bottom-center",
                 autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
-                pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
                 theme: "dark",
             });
         }
-    }
+    };
 
     const handleShowAnswer = () => {
         toast(`${correctAnswer}`, {
-            position: "top-center",
+            position: "bottom-center",
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
-            pauseOnHover: true,
             draggable: true,
             progress: undefined,
             theme: "dark",
@@ -55,7 +54,7 @@ const Card = ({ quiz }) => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
                 {
                     options.map((option, index) => (
-                        <button key={index} onClick={(e) => handleQuizAnswer(option)} className='p-7 hover:text-yellow-500 hover:border-yellow-500 hover:bg-yellow-100 text-yellow-400 border-yellow-400 border'>
+                        <button key={index} onClick={() => handleQuizAnswer(option)} className='p-7 rounded text-yellow-500 hover:border-yellow-500 hover:bg-yellow-100 border-yellow-400 border'>
                             <li className='list-outside list-[circle]'>
                                 {option}
                             </li>
